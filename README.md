@@ -1,6 +1,8 @@
 # UPS Control System Simulation – EECE 669 Project
 
-This repository contains the MATLAB Simulink implementation of a control system for an Uninterruptible Power Supply (UPS), developed as a course project for **EECE 669 – Advanced Control Systems** at the **American University of Beirut (AUB)**.
+This repository contains a MATLAB Simulink implementation of a **Full Linear MIMO control system with Feedback Linearization (FL-MIMO-FL)** for an Uninterruptible Power Supply (UPS), developed as a course project for **EECE 669 – Advanced Control Systems** at the **American University of Beirut (AUB)**.
+
+---
 
 ## 👨‍💻 Project Contributors
 
@@ -12,30 +14,26 @@ This repository contains the MATLAB Simulink implementation of a control system 
 
 ## 📘 Project Description
 
-In this project, we implemented and simulated control strategies to regulate the output of a UPS system in the dq reference frame. The two main control strategies implemented are:
+In this project, we designed and simulated a **Full Linear MIMO controller with Feedback Linearization** to regulate the output of a UPS system operating in the dq reference frame. 
 
-1. **Full Linear MIMO Control with Feedback Linearization (FL-MIMO-FL)**  
-2. **Conventional PI Control (dq-frame)**
+The control strategy was implemented and validated for both:
 
-The system is modeled and simulated using **Simulink** and the **Simscape Power Systems** toolbox. 
+- **Linear loads** (e.g., RL, RLC)
+- **Nonlinear loads** (e.g., switching converters, diode-based)
+
+Simulation and modeling were performed using **Simulink** and **Simscape Electrical** toolbox.
 
 ---
 
-### 🧠 Control Strategies
+## 🧠 Control Strategy
 
-#### ✅ Full Linear MIMO with Feedback Linearization (FL-MIMO-FL)
+### ✅ Full Linear MIMO with Feedback Linearization (FL-MIMO-FL)
 
-- Implements inverse dynamics of the plant to **cancel system nonlinearities**
-- Achieves **exact linearization** using state feedback
-- Designed in the dq reference frame
-- Ensures decoupling of the `d` and `q` axis control channels
-- Suitable for fast transient response and high-performance UPS control
-
-#### ✅ Conventional PI Control
-
-- Traditional dq PI controllers
-- Provides a benchmark for comparison with FL-MIMO
-- Simpler to implement but less robust under varying loads
+- Implements **inverse dynamics of the nonlinear plant**
+- Achieves **exact linearization** and **decoupling** of dq dynamics
+- Designed for high performance under **load variations**
+- Handles **nonlinear effects and coupling terms** directly
+- Tested on both **linear** and **nonlinear** load scenarios
 
 ---
 
